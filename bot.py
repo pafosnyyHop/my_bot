@@ -1,5 +1,3 @@
-# import requests
-# from bs4 import BeautifulSoup
 import telebot
 from telebot import types
 from Mytoken import token
@@ -9,7 +7,6 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['start'])
 def get_message(message):
     chat_id = message.chat.id
-    pressStartButton = 'Кнопка старт'
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('Новости KaktusMadia')
     markup.add(btn1)
@@ -62,12 +59,13 @@ def lalala (message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Новости KaktusMadia')
         markup.add(btn1)
-        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
-    # elif message.text :
-            # photo = list(filter(lambda x: message.text == x['id'], list_))[0]
-            # bot.send_message(chat_id, f"\n{photo['image']}\n")
-        # photo = list(filter(lambda x: message.text == x['id'], list_))[0]
-            
+        bot.send_message(chat_id, text="Вы вернулись в главное меню", reply_markup=markup)
+    
+    else:
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton('Новости KaktusMadia')
+        markup.add(btn1)
+        bot.send_message(chat_id,'Я не знаю такой команды! Введите правильный ID', reply_markup=markup)
 
         
 
