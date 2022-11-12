@@ -1,0 +1,4 @@
+beautifulsoup4
+requests
+pytelegrambotapi==3.7.1
+
